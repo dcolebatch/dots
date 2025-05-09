@@ -1,0 +1,42 @@
+{
+  "name": "Custom Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "zsh": {},
+    "git": {},
+    "docker-in-docker": {},     // Enables Docker and docker-compose support
+    "node": "latest",           // Latest Node.js
+    "python": "latest"          // Latest Python
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
+        "editor.fontLigatures": true,
+        "vim.enableNeovim": true,  // Enables Vim bindings via the Vim extension
+        "vim.useCtrlKeys": true
+      },
+      "extensions": [
+        "ms-vscode.vscode-node-essentials",
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "timonwong.shellcheck",
+        "rust-lang.rust-analyzer",
+        "golang.go",
+        "vscodevim.vim",             // Vim bindings for VS Code
+        "redhat.java",               // Java support
+        "rebornix.ruby",             // Ruby support
+        "ms-python.isort",           // Python import sorting
+        "bungcip.better-toml",       // TOML support for Rust
+        "editorconfig.editorconfig"  // EditorConfig support for consistent coding styles
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "vscode"
+}
