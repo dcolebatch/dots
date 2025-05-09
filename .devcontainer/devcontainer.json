@@ -2,7 +2,7 @@
   "name": "Custom Dev Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "zsh": {},
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
     "git": {},
     "docker-in-docker": {},     // Enables Docker and docker-compose support
     "node": "latest",           // Latest Node.js
